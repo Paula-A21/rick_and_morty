@@ -1,24 +1,25 @@
-
-import Card from "./Card";
+import Card from '../Card/Card';
+import React from "react";
 
 export default function Cards({characters, onClose}) {
-   console.log(characters)
   return (
     <div>
       {
-         characters?.map((char, index)=>{
-            return <Card  key={char.id} char={char} onClose={onClose}/>
-         })
+        characters?.map((char)=>{
+          return (
+            <Card 
+              key={char.id} 
+              species={char.species}
+              status={char.status}
+              name={char.name} 
+              gender={char.gender}
+              origin={char.origin.name}
+              image={char.image}
+              onClose={onClose}
+            />
+          )
+        })
       }
-
-      {/* id={Rick.id}
-      name={Rick.name}
-      status={Rick.status}
-      species={Rick.species}
-      gender={Rick.gender}
-      origin={Rick.origin.name}
-      image={Rick.image}
-      onClose={() => window.alert("Emulamos que se cierra la card")} */}
     </div>
   );
 }
