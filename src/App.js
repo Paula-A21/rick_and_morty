@@ -12,14 +12,19 @@ function App() {
    // console.log(characters)
    const [characters, setCharacters] = useState([]);
    
+  
    function onSearch(id) {
-      axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
-         if (data.name) {
-            setCharacters([...characters, data]);
+      axios(`https://rickandmortyapi.com/api/character/${id}`).then(
+        ({ data }) => {
+          if (data.name) {
+           const char = characters.find((ch)=> ch.id === Number(id))
+           if(char) return alert("Ese personaje ya existe")
+            setCharacters((oldChars) => [...oldChars, data]);
          } else {
-            window.alert('¡No hay personajes con este ID!');
+         window.alert("¡No hay personajes con este ID!");
          }
-      });
+      }
+      );
    }
 
    const onClose = (id) => {
@@ -29,7 +34,7 @@ function App() {
    
    return (
       <div className='App'>
-         
+      
          <Nav onSearch={onSearch}/>
 
          <Routes>

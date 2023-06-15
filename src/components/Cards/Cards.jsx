@@ -8,12 +8,13 @@ export default function Cards({characters, onClose}) {
         characters?.map((char)=>{
           return (
             <Card 
-              key={char.id} 
-              species={char.species}
-              status={char.status}
+              key={char.id}
+              id={char.id} 
               name={char.name} 
+              status={char.status}
+              species={char.species}
               gender={char.gender}
-              origin={char.origin.name}
+              origin={char.origin?.name}
               image={char.image}
               onClose={onClose}
             />
@@ -23,23 +24,3 @@ export default function Cards({characters, onClose}) {
     </div>
   );
 }
-
-
-// import Card from './Card';
-
-// export default function Cards({props}) {
-//    return (
-//       <div> 
-//          {props.characters?.map((char) => { //el signo de pregunta sirve para confirmar que hay algo
-//          return <Card key={char.id} name={char.name} status={char.status} specie={char.specie} gender={char.gender} origin={char.origin.name} img={char.image}/>
-//       }) 
-//    }
-//       </div>
-   
-//    );
-   
-//}
-
-
-
-//name={char.name} status={char.status} specie={char.specie} gender={char.gender} origin={char.origin} img={char.img} key={char.id}

@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom';
 
-export default function Card({id,name,gender,species,origin,image,status, onClose}) { // obj
+export default function Card({id,name,gender,species,origin,image,status,onClose}) { // obj
    return (
       <div>
          <button onClick={() => onClose(id)}>X</button>
