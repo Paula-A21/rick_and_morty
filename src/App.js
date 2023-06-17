@@ -1,18 +1,36 @@
 import './App.css';
 import React from 'react';
+import axios from "axios";
+import {Route, Routes, useLocation, useNavigate} from 'react-router-dom';
+import {useState, useEffect} from 'react';
 import Cards from "./components/Cards/Cards";
 import Nav from "./components/Nav/Nav";
-import {useState} from 'react';
-import axios from "axios";
-import {Route, Routes} from 'react-router-dom';
 import Detail from './views/Detail';
 import About from './views/About';
+import Form from './components/Form/Form';
+
 
 function App() {
-   // console.log(characters)
+      
    const [characters, setCharacters] = useState([]);
-   
-  
+   const location = useLocation();
+   const navigate = useNavigate();
+   const [access, setAccess] = useState(false);
+   const EMAIL = 'chupapijas123@gmail.com';
+   const PASSWORD = 'quesito21';
+
+   useEffect(() => {
+      !access && navigate('/');
+   }, [access]);
+
+   const login = (userData) => {
+      if (userData.password === PASSWORD && userData.email === EMAIL) {
+         setAccess(true);
+         navigate('/home');
+      }
+      else alert("Email y/o contraseña incorrectos")
+   }
+
    function onSearch(id) {
       axios(`https://rickandmortyapi.com/api/character/${id}`).then(
         ({ data }) => {
@@ -35,9 +53,10 @@ function App() {
    return (
       <div className='App'>
       
-         <Nav onSearch={onSearch}/>
+         {location.pathname !== "/" && <Nav onSearch={onSearch} />}
 
          <Routes>
+            <Route path = '/' element = {<Form login={login}/>}/>
             <Route path="/home"  element={<Cards characters={characters} onClose={onClose}/>}/>
             <Route path='/detail/:id' element={<Detail/>}/>
             <Route path='/about' element={<About/>}/>
