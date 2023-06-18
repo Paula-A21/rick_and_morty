@@ -1,9 +1,9 @@
 .background{
     background-image: url(./rick\ &\ morty\ a\ 20\ minutes\ adventure_.gif);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     width: 100vw;
-    height: auto;
+    height: 100vh;
 }
 
 
