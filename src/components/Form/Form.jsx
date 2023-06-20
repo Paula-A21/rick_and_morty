@@ -28,29 +28,33 @@ export default function Form({login}) {
 }
 
 return (
-    <body className={style.background} >
-      <form onSubmit={handleSubmit}>
-          <div>
-              <label>Email</label>
+    <body className={style.background}>
+      <form onSubmit={handleSubmit} className={style.form}>
+          <div className={style.divcontainer}>
+              <label className={style.label}>Email</label>
               <input 
-                  type="text"
-                  name="email" 
-                  value = {userData.email}
-                  onChange={handleChange}
+                type="text"
+                name="email" 
+                value = {userData.email}
+                onChange={handleChange}
+                className={style.inputcontainer}
+                
               />
               <span>{errors.email}</span>
           </div>
-          <div>
-              <label>Password</label>
+          <div className={style.divcontainer}>
+              <label className={style.label}>Password</label>
               <input 
                   type="text"
                   name="password" 
                   value = {userData.password}
                   onChange={handleChange}
+                  className={style.inputcontainer}
               />
               <span>{errors.password}</span>
           </div>
-          <button>Submit</button>
+        <button className={style.button}>Submit</button>
+         
       </form>
   </body>
 );

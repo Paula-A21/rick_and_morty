@@ -9,8 +9,10 @@ export default function SearchBar({onSearch}) {
 
     return (
        <div>
-          <input type="search" onChange={handleChange} value={id} name= "id" placeholder="insert id ..."/>
-          <button onClick={() => onSearch(id)}>Agregar</button>
+         <input type="search" onChange={handleChange} value={id} name= "id" placeholder="insert id ..."/>
+         <button onClick={() => {onSearch(id); setId("")}}>Agregar</button> 
+         {/* le paso a la función onSearch, que está en APP, el id recibido
+         en el event.target.value de setId*/}
        </div>
     );
  }
