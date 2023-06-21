@@ -8,7 +8,7 @@ import Nav from "./components/Nav/Nav";
 import Detail from './views/Detail/Detail';
 import About from "./views/About/About"
 import Form from './components/Form/Form';
-
+import Favorites from "./components/Favorites/Favorites";
 
 function App() {
       
@@ -72,6 +72,7 @@ function App() {
             <Route path="/home"  element={<Cards characters={characters} onClose={onClose}/>}/> {/*le paso los characters a Cards por props, junto con la función on close que es la X que aparece en la carta y me permite cerrarla*/}
             <Route path='/detail/:id' element={<Detail/>}/> {/*El detail me sirve para entrar a los detalles de cada carta y ver esa en específico*/}
             <Route path='/about' element={<About/>}/>
+            <Route path='/favorites' element={<Favorites/>}/>
          </Routes>
       </div>
    );
