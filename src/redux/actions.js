@@ -1,12 +1,30 @@
-import { type } from "@testing-library/user-event/dist/type";
-export const ADD_FAV = "ADD_FAV";
-export const REMOVE_FAV = "REMOVE_FAV";
+const ADD_FAV = "ADD_FAV";
+const REMOVE_FAV = "REMOVE_FAV";
+const FILTER = "FILTER";
+const ORDER = "ORDER";
 
-export const addFav = (character) => {
-    return character({type: ADD_FAV, payload: character});
-    
+const filterCards = (gender) => {
+    return {type: FILTER, payload: gender}
+}
+
+const orderCards = (orden) => {
+    return {type: ORDER, payload: orden}
+}
+
+const addFav = (character) => {
+    return {type: ADD_FAV, payload: character};
 } 
 
-export const removeFav = (id) => {
+const removeFav = (id) => {
     return {type: REMOVE_FAV, payload: id}
+}
+
+module.exports = {
+    removeFav,
+    addFav,
+    ADD_FAV,
+    REMOVE_FAV,
+    filterCards,
+    orderCards,
+    ORDER
 }
