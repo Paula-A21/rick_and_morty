@@ -9,6 +9,8 @@ import Detail from './views/Detail/Detail';
 import About from "./views/About/About"
 import Form from './components/Form/Form';
 import Favorites from "./components/Favorites/Favorites";
+import Random from "./components/Random/Random";
+
 
 function App() {
       
@@ -74,6 +76,8 @@ function App() {
             <Route path='/about' element={<About/>}/>
             <Route path='/favorites' element={<Favorites/>}/>
          </Routes>
+
+         <Random characters={characters}/>
       </div>
    );
 }
