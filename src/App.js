@@ -10,6 +10,7 @@ import About from "./views/About/About"
 import Form from './components/Form/Form';
 import Favorites from "./components/Favorites/Favorites";
 import Random from "./components/Random/Random";
+import Error from "./components/Error/Error";
 
 
 function App() {
@@ -35,6 +36,10 @@ function App() {
          navigate('/home');
       }
       else alert("Email y/o contraseña incorrectos")
+   }
+   const logout = () => {
+      setAccess(false);
+      navigate('/');
    }
 
    /*la función on search es la que se ocupa de agregar a los characters 
@@ -67,7 +72,18 @@ function App() {
          
          {/*quiero que la barra de navegación se muestre en todos lados menos en la
          home page ya que ahí está el form*/}
-         {location.pathname !== "/" && <Nav onSearch={onSearch} />}
+         {location.pathname !== "/" && <Nav onSearch={onSearch} logout={logout} />}
+{/* 
+         {
+            location.pathname !== "/" || 
+            location.pathname !== "/home" || 
+            location.pathname !== '/detail/:id' ||
+            location.pathname !== '/about' || 
+            location.pathname !== '/favorites'
+            ? 
+            <Error/> :
+            
+         } */}
 
          <Routes>
             <Route path = '/' element = {<Form login={login}/>}/>

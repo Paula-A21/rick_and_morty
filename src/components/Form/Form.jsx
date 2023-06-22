@@ -38,7 +38,6 @@ return (
                 value = {userData.email}
                 onChange={handleChange}
                 className={style.inputcontainer}
-                
               />
               <span>{errors.email}</span>
           </div>
