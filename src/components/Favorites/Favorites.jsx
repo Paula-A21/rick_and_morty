@@ -2,14 +2,16 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Card from "../Card/Card";
 import {orderCards, filterCards} from "../../redux/actions";
+import { useState } from "react";
 
-const Favorites = () =>{
+const Favorites = ({myFavorites}) =>{
 
-    const myFavorites = useSelector((state) => state.myFavorites);
     const dispatch = useDispatch();
+    const [aux, setAux] = useState(false)
 
     const handleOrder = () => {
         dispatch(orderCards(e.target.value));
+        setAux(true);
     };
 
     const handleFilter = () => {
@@ -25,10 +27,11 @@ const Favorites = () =>{
             </select>
 
             <select onChange={handleFilter}>
-                <option value="Male">Male</option>
+                <option value={"Male"}>Male</option>
                 <option value={"Female"}>Female</option>
                 <option value={"Genderless"}>Genderless</option>
                 <option value={"unknown"}>unknown</option>
+                <option value={"All"}>All</option>
             </select>
 
             {

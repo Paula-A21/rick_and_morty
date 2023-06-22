@@ -7,8 +7,8 @@ const filterCards = (gender) => {
     return {type: FILTER, payload: gender}
 }
 
-const orderCards = (orden) => {
-    return {type: ORDER, payload: orden}
+const orderCards = (order) => {
+    return {type: ORDER, payload: order}
 }
 
 const addFav = (character) => {
