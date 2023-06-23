@@ -33,23 +33,24 @@ return (
           <div className={style.divcontainer}>
               <label className={style.label}>Email</label>
               <input 
+                id={style.inputcontainer}
                 type="text"
                 name="email" 
                 value = {userData.email}
                 onChange={handleChange}
-                className={style.inputcontainer}
-                
+                className={errors.email ? style.error : style.succes}
               />
               <span>{errors.email}</span>
           </div>
           <div className={style.divcontainer}>
               <label className={style.label}>Password</label>
               <input 
+                  id={style.inputcontainer}
                   type="text"
                   name="password" 
                   value = {userData.password}
                   onChange={handleChange}
-                  className={style.inputcontainer}
+                  className={errors.password ? style.error : style.succes}
               />
               <span>{errors.password}</span>
           </div>

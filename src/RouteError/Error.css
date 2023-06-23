@@ -1,0 +1,10 @@
+.error{
+    background-image: url("rick-borracho.jpg");
+}
+
+.leters{
+    font-family: "Above Bold";
+    src: url("Above Bold.otf") format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}

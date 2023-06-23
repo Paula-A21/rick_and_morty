@@ -31,21 +31,31 @@
     src: url("get_schwifty.ttf") format('truetype');
     font-style: normal;
     font-weight: normal;
-    
     font-size: 55px;
     color: #08BAE3;
     z-index: 50;
-    -webkit-text-stroke: 1.5px #FFF765;
-    z-index: 49;
-    text-shadow: 15px  15px 15px rgba(0,0,0,1),
-               8px  8px 8px rgba(0,0,0,1),
-              8px  8px 8px rgba(0,0,0,1) ,
-                8px 8px 8px rgba(0,0,0,1);
+    -webkit-text-stroke: 1.5px #0a3d2b ;
+    text-shadow: 0 0 10px #FFF765, 0 0 10px #FFF765;
+    
 }
 
-.inputcontainer{
-    border-radius: 67px 66px 65px 66px;
-    -webkit-border-radius: 67px 66px 65px 66px;
-    -moz-border-radius: 67px 66px 65px 66px;
-    border: 3px solid rgba(1,22,90,0.1);
+#inputcontainer{
+    border: 3px solid #5776b5;
+    background: #a1afd9;
+}
+
+.error{
+    border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+    -moz-border-radius: 20px 20px 20px 20px;
+    background: #f56060;
+    border: 3px solid #ff0000;
+}
+
+.succes{
+    border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+    -moz-border-radius: 20px 20px 20px 20px;
+    background: #60f579;
+    border: 3px solid #009734;
 }

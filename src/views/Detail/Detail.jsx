@@ -2,7 +2,7 @@ import axios from "axios";
 import {useParams} from "react-router-dom"; 
 import {useEffect, useState} from "react";
 import React from "react";
-
+import styles from "./Detail.module.css"
 
 export default function Detail (){
     
@@ -21,13 +21,13 @@ export default function Detail (){
     }, [id])
 
     return (
-        <div>
-            <h2>{character?.name}</h2> 
-            <h2>{character?.status}</h2>
-            <h2>{character?.species}</h2>
-            <h2>{character?.gender}</h2>
-            <h2>{character.origin?.name}</h2>
-            <img src={character.image} alt={character.name} /> 
+        <div className={styles.bacground}>
+            <h2 className={styles.letters}>{character?.name}</h2> 
+            <h2 className={styles.letters}>{character?.status}</h2>
+            <h2 className={styles.letters}>{character?.species}</h2>
+            <h2 className={styles.letters}>{character?.gender}</h2>
+            <h2 className={styles.letters}>{character.origin?.name}</h2>
+            <img src={character?.image} alt={character.name} /> 
         </div>
     )
 }

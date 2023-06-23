@@ -13,7 +13,7 @@ function About(){
                 <hr></hr>
             </div>
             <div>
-                <img src={final} height={"500px"} width={"600px"} alt="inicio"/>
+                <img src={final} height={"500px"} width={"600px"} alt="final"/>
             </div>
 
         </div>

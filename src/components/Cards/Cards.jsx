@@ -1,11 +1,11 @@
 import Card from '../Card/Card';
 import React from "react";
-
+import style from './Cards.module.css';
 
 export default function Cards({characters, onClose}) { //recibe props desde APP
 
   return (
-    <div>
+    <div className={style.CardsStyle}>
       { /*La función cards se encarga de mapear los characters que recibe por parámetro desde APP*/
           
         characters?.map((char)=>{

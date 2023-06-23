@@ -9,13 +9,16 @@ import Detail from './views/Detail/Detail';
 import About from "./views/About/About"
 import Form from './components/Form/Form';
 import Favorites from "./components/Favorites/Favorites";
+import Random from './Random/Random';
+import RouteError from "./RouteError/Error";
+
 
 function App() {
       
    const [characters, setCharacters] = useState([]); //estos son los characteres que se van a guardar gracias a la API
    const location = useLocation();
    const navigate = useNavigate();
-   const EMAIL = 'chupapijas123@gmail.com';
+   const EMAIL = 'paula123@gmail.com';
    const PASSWORD = 'quesito21';
    const [access, setAccess] = useState(false);
 
@@ -32,7 +35,16 @@ function App() {
          setAccess(true);
          navigate('/home');
       }
-      else alert("Email y/o contraseña incorrectos")
+      else if (userData.email !== EMAIL){
+         alert("Email no registrado")
+      }
+      else{
+         alert("Contraseña incorrecta")
+      }
+   }
+   const logout = () => {
+      setAccess(false);
+      navigate('/');
    }
 
    /*la función on search es la que se ocupa de agregar a los characters 
@@ -65,7 +77,18 @@ function App() {
          
          {/*quiero que la barra de navegación se muestre en todos lados menos en la
          home page ya que ahí está el form*/}
-         {location.pathname !== "/" && <Nav onSearch={onSearch} />}
+         {location.pathname !== "/" && <Nav onSearch={onSearch} logout={logout} />}
+{/* 
+         {
+            location.pathname !== "/" || 
+            location.pathname !== "/home" || 
+            location.pathname !== '/detail/:id' ||
+            location.pathname !== '/about' || 
+            location.pathname !== '/favorites'
+            ? 
+            <RouteError/> :
+            
+         } */}
 
          <Routes>
             <Route path = '/' element = {<Form login={login}/>}/>
@@ -73,13 +96,15 @@ function App() {
             <Route path='/detail/:id' element={<Detail/>}/> {/*El detail me sirve para entrar a los detalles de cada carta y ver esa en específico*/}
             <Route path='/about' element={<About/>}/>
             <Route path='/favorites' element={<Favorites/>}/>
+            <Route path="*" element={<RouteError/>}></Route>
          </Routes>
+
+         <Random characters={characters}/>
       </div>
    );
 }
 
 export default App;
-
 
 
 

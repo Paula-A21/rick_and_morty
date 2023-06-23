@@ -1,19 +1,22 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Card from "../Card/Card";
 import {orderCards, filterCards} from "../../redux/actions";
+import { useState } from "react";
 
 const Favorites = () =>{
 
-    const myFavorites = useSelector((state) => state.myFavorites);
+    const myFavs = useSelector((state) => state.myFavorites);
     const dispatch = useDispatch();
+    const [aux, setAux] = useState(false);
 
-    const handleOrder = () => {
-        dispatch(orderCards(e.target.value));
+    const handleOrder = (event) => {
+        dispatch(orderCards(event.target.value));
+        setAux(true);
     };
 
-    const handleFilter = () => {
-        dispatch(filterCards(e.target.value));
+    const handleFilter = (event) => {
+        dispatch(filterCards(event.target.value));
     }
 
     return (
@@ -25,14 +28,15 @@ const Favorites = () =>{
             </select>
 
             <select onChange={handleFilter}>
-                <option value="Male">Male</option>
+                <option value={"All"}>All</option>
+                <option value={"Male"}>Male</option>
                 <option value={"Female"}>Female</option>
                 <option value={"Genderless"}>Genderless</option>
                 <option value={"unknown"}>unknown</option>
             </select>
 
             {
-                myFavorites.map((char) => {
+                myFavs?.map((char) => {
                     return (<Card 
                         key={char.id}
                         id={char.id} 
@@ -42,8 +46,7 @@ const Favorites = () =>{
                         gender={char.gender}
                         origin={char.origin?.name}
                         image={char.image}
-                    />
-                    );
+                    />);
                 })
             }
         </div>

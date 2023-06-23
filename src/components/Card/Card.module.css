@@ -1,0 +1,51 @@
+.cardBackground{
+  background-image: url("portal.png");
+    /* background-color: blue; */
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  height: 450px;
+  margin: 5%;
+  justify-content: center;
+  text-align: center;
+  background-size: 100% 100%;
+}
+
+.barra{
+  
+  
+}
+
+.name{
+  
+}
+
+.cross{
+  /* font-size: 16px;
+  display: flex;
+  padding-left: 93%;
+  height: 30px;
+  width: 30px;
+  margin: 5px;
+  transition: 0.3s;
+  border: none;
+  cursor: pointer; */
+}
+
+.fav{
+  margin: 15px;
+}
+
+.img{
+
+} 
+
+.name{
+    font-family: "Doctor Glitch";
+    src: url("Doctor Glitch.otf") format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+

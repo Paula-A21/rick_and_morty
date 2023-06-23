@@ -1,0 +1,20 @@
+.navBar{
+    display: flex;
+    justify-content: space-around;
+    margin: 5px;
+}
+
+.buttons{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonsStyle{
+    border-radius: 39px 39px 39px 39px;
+    -webkit-border-radius: 39px 39px 39px 39px;
+    -moz-border-radius: 39px 39px 39px 39px;
+    background: #e7eb4e;
+    border: 4px solid #43ca70;
+}
+

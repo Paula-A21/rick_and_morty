@@ -1,0 +1,14 @@
+.letters{
+    font-family: "Stork Delivery";
+    src: url("Stork Delivery.ttf") format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+.bacground{
+    /* display: flex;
+    justify-content: center; */
+    background-color: rgb(99, 243, 243);
+    background-size: 70% 70%;
+    padding: 15px;
+}
