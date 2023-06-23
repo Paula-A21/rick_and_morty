@@ -35,8 +35,18 @@ function App() {
          setAccess(true);
          navigate('/home');
       }
-      else alert("Email y/o contraseña incorrectos")
+      else if (userData.email !== EMAIL){
+         alert("Email no registrado")
+      }
+      else{
+         alert("Contraseña incorrecta")
+      }
    }
+   const logout = () => {
+      setAccess(false);
+      navigate('/');
+   }
+  
 
    /*la función on search es la que se ocupa de agregar a los characters 
    de la api segun el id que escriba en el input, esto los recibe desde 
