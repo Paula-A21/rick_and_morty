@@ -4,7 +4,7 @@ import Card from "../Card/Card";
 import {orderCards, filterCards} from "../../redux/actions";
 import { useState } from "react";
 
-const Favorites = ({myFavorites}) =>{
+const Favorites = () =>{
 
     const myFavs = useSelector((state) => state.myFavorites);
     const dispatch = useDispatch();
