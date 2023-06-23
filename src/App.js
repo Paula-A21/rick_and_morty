@@ -35,16 +35,7 @@ function App() {
          setAccess(true);
          navigate('/home');
       }
-      else if (userData.email !== EMAIL){
-         alert("Email no registrado")
-      }
-      else{
-         alert("Contraseña incorrecta")
-      }
-   }
-   const logout = () => {
-      setAccess(false);
-      navigate('/');
+      else alert("Email y/o contraseña incorrectos")
    }
 
    /*la función on search es la que se ocupa de agregar a los characters 

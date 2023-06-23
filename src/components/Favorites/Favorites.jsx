@@ -4,7 +4,7 @@ import Card from "../Card/Card";
 import {orderCards, filterCards} from "../../redux/actions";
 import { useState } from "react";
 
-const Favorites = () =>{
+const Favorites = ({myFavorites}) =>{
 
     const myFavs = useSelector((state) => state.myFavorites);
     const dispatch = useDispatch();
@@ -33,6 +33,7 @@ const Favorites = () =>{
                 <option value={"Female"}>Female</option>
                 <option value={"Genderless"}>Genderless</option>
                 <option value={"unknown"}>unknown</option>
+                <option value={"All"}>All</option>
             </select>
 
             {
