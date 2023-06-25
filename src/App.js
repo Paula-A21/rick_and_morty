@@ -9,7 +9,6 @@ import Detail from './views/Detail/Detail';
 import About from "./views/About/About"
 import Form from './components/Form/Form';
 import Favorites from "./components/Favorites/Favorites";
-import Random from './Random/Random';
 import RouteError from "./RouteError/Error";
 
 
@@ -93,14 +92,13 @@ function App() {
 
          <Routes>
             <Route path = '/' element = {<Form login={login}/>}/>
-            <Route path="/home"  element={<Cards characters={characters} onClose={onClose}/>}/> {/*le paso los characters a Cards por props, junto con la función on close que es la X que aparece en la carta y me permite cerrarla*/}
+            <Route path="/home"  element={<Cards characters={characters} onClose={onClose}/>} /> {/*le paso los characters a Cards por props, junto con la función on close que es la X que aparece en la carta y me permite cerrarla*/}
             <Route path='/detail/:id' element={<Detail/>}/> {/*El detail me sirve para entrar a los detalles de cada carta y ver esa en específico*/}
             <Route path='/about' element={<About/>}/>
             <Route path='/favorites' element={<Favorites/>}/>
             <Route path="*" element={<RouteError/>}></Route>
          </Routes>
-
-         <Random characters={characters}/>
+         
       </div>
    );
 }
