@@ -33,7 +33,6 @@ const Favorites = () =>{
                 <option value={"Female"}>Female</option>
                 <option value={"Genderless"}>Genderless</option>
                 <option value={"unknown"}>unknown</option>
-                <option value={"All"}>All</option>
             </select>
 
             {

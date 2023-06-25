@@ -29,17 +29,25 @@ const rootReducer = (state = initialState, actions) => {
             };
         case ORDER: 
 
-            const allCharactersCopy = [...state.allCharacters];
-
+            const allCharactersCopy = state.allCharacters.sort((a, b) => {
+                return actions.payload === "A" ? a.id - b.id : b.id - a.id;
+            });
             return {
-                ...state, 
-                myFavorites: 
-                [...allCharactersCopy, 
-                    actions.payload === "A" ?
-                    allCharactersCopy.sort((a, b) => a.id - b.id) :
-                    allCharactersCopy.id.sort((a, b) => b.id - a.id)
-                ]
-            }
+                ...state,
+                myFavorites: allCharactersCopy,
+            };
+
+            // const allCharactersCopy = [...state.allCharacters];
+
+            // return {
+            //     ...state, 
+            //     myFavorites: 
+            //     [...allCharactersCopy, 
+            //         actions.payload === "A" ?
+            //         allCharactersCopy.sort((a, b) => a.id - b.id) :
+            //         allCharactersCopy.sort((a, b) => b.id - a.id)
+            //     ]
+            // }
         default:
             return {...state};
     }

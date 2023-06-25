@@ -1,93 +1,63 @@
 import React from "react";
 import {Link} from 'react-router-dom';
 import { addFav, removeFav } from "../../redux/actions";
-import { useEffect, useState } from "react";
-import { connect } from "react-redux";
 import style from "./Card.module.css";
+import { useDispatch, useSelector } from "react-redux";
 
+function Card({ id, name, gender, species, origin, image, status, onClose }) {
+  const dispatch = useDispatch();
+  const myFavorites = useSelector((state) => state.myFavorites);
+  const isFav = myFavorites.some((fav) => fav.id === id);
 
-function Card({id,name,gender,species,origin,image,status,onClose, addFav, removeFav, myFavorites}) { //hago destructuring de characters que recibo por props desde Cards   
-      
-   const [isFav, setIsFav] = useState(false);
+  const handleFavorite = () => {
+    if (isFav) {
+      dispatch(removeFav(id));
+    } else {
+      dispatch(addFav({ id, name, gender, species, origin, image, status }));
+    }
+  };
 
-   useEffect(() => {
-      myFavorites.forEach((fav) => {
-         if (fav.id === id) {
-            setIsFav(true);
-         }
-      });
-   }, [myFavorites]);
+  return (
 
-   const handleFavorite = () => {
-     if(isFav === true){
-       setIsFav(false);
-       removeFav(id); 
-     }
-     else{
-       setIsFav(true);
-       addFav({id,name,gender,species,origin,image,status});
-     }
-   }
+      /*muestro cada card según el id que reciba desde el map 
+      de characters que hace card, que este a su vez, lo recibe del 
+      estado de APP que este a su vez, recibe el id desde SearchBar
+      y también creo el onClick que se va a ocupar de cerrar la 
+      carta mandandole una función flecha que a su vez mande el 
+      id al onClose*/
 
-   return (
-         /*muestro cada card según el id que reciba desde el map 
-         de characters que hace card, que este a su vez, lo recibe del estado de APP
-         que este a su vez, recibe el id desde SearchBar
-         y también creo el onClick que se va a ocupar de cerrar la carta mandandole             una función flecha que a su vez mande el id al onClose*/
-         
-         <div className={style.cardBackground}>
-            
-            <div className={style.barra}>
-
-               <div className={style.cross}>
-                  <button onClick={() => onClose(id)}>X</button>
-               </div>
-               
-               <div className={style.name}>
-                  <Link to={`/detail/${id}`}> {/*El nombre de cada personaje de cada carta se ilumina porque tiene un link para entrar a los detalles de la carta*/}
-                        <h2 className="name">{name}</h2>
-                  </Link>
-               </div>
-
-            </div>
-            {/*muestro solo el nombre y la imagen para que lo demas se vea en detalles*/}
-            
-            <div>
-               <img src={image} alt={name} className={style.img}/>
-            </div>
-
-            <div className={style.fav}>
-               {
-                  isFav ? (
-                     <button onClick={handleFavorite}>❤️</button>
-                     ) : (
-                           <button onClick={handleFavorite}>🤍</button>
-                     )
-                  }
-            
-            </div>
+    <div className={style.cardBackground}>
+      <div className={style.barra}>
+        <div className={style.cross}>
+          <button onClick={() => onClose(id)}>X</button>
+        </div>
+        <div className={style.name}>
+          <Link to={`/detail/${id}`}>
+            <h2 className="name">{name}</h2>  {/*El nombre de cada personaje
+                                             de cada carta se ilumina porque
+                                             tiene un link para entrar a los
+                                             detalles de la carta*/}
+         </Link>
+        </div>
       </div>
-   );
+      <div>
+
+          {/*muestro solo el nombre y la imagen para que lo demas 
+          se vea en detalles*/}
+        <img src={image} alt={name} className={style.img} />
+      </div>
+      <div className={style.fav}>
+        {isFav ? (
+          <button onClick={handleFavorite}>❤️</button>
+        ) : (
+          <button onClick={handleFavorite}>🤍</button>
+        )}
+      </div>
+    </div>
+  );
 }
 
-export const mapStateToProps = (state) => {
-   return {
-      myFavorites: state.myFavorites
-   }
-}
-
-export const mapDispatchToProps = (dispatch) => {
-   return{
-      addFav: (charater) => {
-         dispatch(addFav(charater))
-      },
-      removeFav: (id) => {
-         dispatch(removeFav(id))
-      }
-   }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Card);
+export default Card; 
 
 
 
