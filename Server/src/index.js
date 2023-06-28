@@ -12,7 +12,15 @@ http
                 console.log(url); 
                 const id = Number(url.split("/").at(-1));   
                 console.log(id);
-                res.end(`Muestra el personaje con id: ${id}` );
+
+                for(prop in data){
+                    if(prop === id){
+                        res.end(
+                            JSON.stringify(id)
+                        );
+                    }
+                }
+
             }
 
     }).listen(3001, "localhost");
