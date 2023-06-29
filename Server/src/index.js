@@ -22,6 +22,12 @@ http
                         JSON.stringify(characterId)
                     )
                 }
+                else{
+                    res.writeHead(404, {"Content-Type": "application/json"} );
+                    return res.end(
+                        JSON.stringify({error: "Character not found"})
+                    )
+                }
 
             }
 
