@@ -9,16 +9,18 @@ http
             
             if(url.includes("/rickandmorty/character/")){
 
+                //http://localhost:3001/rickandmorty/character/
+
                 console.log(url); 
                 const id = Number(url.split("/").at(-1));   
-                console.log(id);
+                const characterId = data.find((char) => char.id === id);
+                console.log(characterId);
 
-                for(prop in data){
-                    if(prop === id){
-                        res.end(
-                            JSON.stringify(id)
-                        );
-                    }
+                if(characterId){
+                    res.writeHead(200, {"Content-Type": "application/json"} );
+                    res.end(
+                        JSON.stringify(characterId)
+                    )
                 }
 
             }
