@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import validate from "./Validation";
 import style from "./Form.module.css";
-import styles from "./SubmitButton.module.css";
+//import styles from "./SubmitButton.module.css";
 
 export default function Form({login}) {
 
@@ -57,10 +57,10 @@ return (
               <span>{errors.password}</span>
           </div>
 
-          <button id={styles.pushable} className={style.label}>
-            <span className={styles.shadow}></span>
-            <span className={styles.edge}></span>
-            <span className={styles.front}>
+          <button className={style.pushable}>
+            <span className={style.shadow}></span>
+            <span className={style.edge}></span>
+            <span className={style.front}>
               Submit
             </span>
           </button>

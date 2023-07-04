@@ -1,4 +1,4 @@
-#pushable {
+/* #pushable {
     position: relative;
     background: #78d1ca;
     padding: 0;
@@ -79,4 +79,4 @@
   
   #pushable:focus:not(:focus-visible) {
     outline: none;
-  }
+  } */

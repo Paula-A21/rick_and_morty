@@ -8,7 +8,7 @@ export default function SearchBar({ onSearch }) {
     setId(event.target.value);
   };
 
-  function randomChar(characters) {
+  function randomChar() {
     const idRandom = Math.floor(Math.random() * 825) + 1;
     onSearch(idRandom);
   }
