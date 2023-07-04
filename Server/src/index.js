@@ -1,34 +1,60 @@
-const http = require("http");
-const data = require("./utils/data");
+const express = require("express");
+const server = express();
+const PORT = 3001;
+const logger = require("morgan");
+const router = require("./routes/index");
 
-http
-    .createServer((req, res) => {
-        res.setHeader('Access-Control-Allow-Origin', '*');
+server.use(express.json());
+
+server.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header(
+        'Access-Control-Allow-Headers',
+        'Origin, X-Requested-With, Content-Type, Accept'
+        );
+        res.header(
+            'Access-Control-Allow-Methods',
+            'GET, POST, OPTIONS, PUT, DELETE'
+            );
+            next();
+});
         
-            const {url} = req; 
+// server.use("/rickandmorty", router);
+        
+
+//* extended: false <-> datos que vienen de un form simple
+
+server.use(logger("dev"));
+
+
+//* ROUTES
+
+server.use("/rickandmorty", router)
+
+server.listen(PORT, () => {
+    console.log('Server raised in port: ' + PORT);
+});
+        
+        
+        //Así se crea un server con http
+        // const http = require("http");
+        // const getCharById = require("./controllers/getCharById")
+        
+        // http
+        //     .createServer((req, res) => {
+            //         res.setHeader('Access-Control-Allow-Origin', '*');
+        
+//             const {url} = req; 
             
-            if(url.includes("/rickandmorty/character/")){
+//             if(url.includes("/rickandmorty/character/")){
 
-                //http://localhost:3001/rickandmorty/character/
+//                 //http://localhost:3001/rickandmorty/character/
 
-                console.log(url); 
-                const id = Number(url.split("/").at(-1));   
-                const characterId = data.find((char) => char.id === id);
-                console.log(characterId);
-
-                if(characterId){
-                    res.writeHead(200, {"Content-Type": "application/json"} );
-                    res.end(
-                        JSON.stringify(characterId)
-                    )
-                }
-                else{
-                    res.writeHead(404, {"Content-Type": "application/json"} );
-                    return res.end(
-                        JSON.stringify({error: "Character not found"})
-                    )
-                }
-
-            }
-
-    }).listen(3001, "localhost");
+//                 // console.log(url); 
+//                 //const id = Number(url.split("/").at(-1));   
+//                 // const character = data.find((char) => char.id === id);
+//                 // console.log(characterId);
+//                 getCharById(res, req.url);
+//             }
+//     }).listen(3001, "localhost");

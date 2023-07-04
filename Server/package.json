@@ -1,0 +1,30 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "\"Server del rick_and_morty\"",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paula-A21/rick_and_morty.git"
+  },
+  "author": "\"Paula Arce\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Paula-A21/rick_and_morty/issues"
+  },
+  "homepage": "https://github.com/Paula-A21/rick_and_morty#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.22",
+    "router": "^1.3.8"
+  }
+}
