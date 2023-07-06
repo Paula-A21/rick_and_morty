@@ -28,7 +28,6 @@ const rootReducer = (state = initialState, actions) => {
                 
             };
         case ORDER: 
-
             const allCharactersCopy = state.allCharacters.sort((a, b) => {
                 return actions.payload === "A" ? a.id - b.id : b.id - a.id;
             });

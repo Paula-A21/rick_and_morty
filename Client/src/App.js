@@ -11,6 +11,7 @@ import Form from './components/Form/Form';
 import Favorites from "./components/Favorites/Favorites";
 import RouteError from "./RouteError/Error";
 
+
 function App() {
       
    const [characters, setCharacters] = useState([]); //estos son los characteres que se van a guardar gracias a la API
@@ -20,14 +21,14 @@ function App() {
 
    /*simula una base de datos dejando acceder solo a la contraseña y 
    password que le paso*/
-   function login(userData) {
+   async function login(userData) {
       const { email, password } = userData;
       const URL = 'http://localhost:3001/rickandmorty/login/';
-      axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
-         const { access } = data;
+      const response = await axios(URL + `?email=${email}&password=${password}`)
+         const { access } = response.data;
          setAccess(access);
          access && navigate('/home');
-      });
+      
    }
 
    /*este use effect sirve para que si el email y/o la password que pusimos no es 

@@ -1,156 +1,156 @@
 .background{
-    background-image: url(./rick\ &\ morty\ a\ 20\ minutes\ adventure_.gif);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    width: 100vw;
-    height: 100vh;
+  background-image: url(./rick\ &\ morty\ a\ 20\ minutes\ adventure_.gif);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 .form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    height:95%;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height:95%;
+  gap: 1rem;
 
 }
 
 .divcontainer{
-    display: flex;
-    flex-direction: column;
-    border-radius: 67px 66px 65px 66px;
-    /* background-color: pink; */
-    
+  display: flex;
+  flex-direction: column;
+  border-radius: 67px 66px 65px 66px;
+  /* background-color: pink; */
+  
 }
 
 .label{
-    margin-bottom: 10px;
-    font-family: "Get Schwifty";
-    src: url("get_schwifty.ttf") format('truetype');
-    font-style: normal;
-    font-weight: normal;
-    font-size: 55px;
-    color: #08BAE3;
-    z-index: 50;
-    -webkit-text-stroke: 1.5px #0a3d2b ;
-    text-shadow: 0 0 10px #FFF765, 0 0 10px #FFF765;
-    
+  margin-bottom: 10px;
+  font-family: "Get Schwifty";
+  src: url("get_schwifty.ttf") format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  font-size: 55px;
+  color: #08BAE3;
+  z-index: 50;
+  -webkit-text-stroke: 1.5px #0a3d2b ;
+  text-shadow: 0 0 10px #FFF765, 0 0 10px #FFF765;
+  
 }
 
 #inputcontainer{
-    border: 3px solid #5776b5;
-    background: #a1afd9;
+  border: 3px solid #5776b5;
+  background: #a1afd9;
 }
 
 .error{
-    border-radius: 20px 20px 20px 20px;
-    -webkit-border-radius: 20px 20px 20px 20px;
-    -moz-border-radius: 20px 20px 20px 20px;
-    background: #f56060;
-    border: 3px solid #ff0000;
+  border-radius: 20px 20px 20px 20px;
+  -webkit-border-radius: 20px 20px 20px 20px;
+  -moz-border-radius: 20px 20px 20px 20px;
+  background: #f56060;
+  border: 3px solid #ff0000;
 }
 
 .succes{
-    border-radius: 20px 20px 20px 20px;
-    -webkit-border-radius: 20px 20px 20px 20px;
-    -moz-border-radius: 20px 20px 20px 20px;
-    background: #60f579;
-    border: 3px solid #009734;
+  border-radius: 20px 20px 20px 20px;
+  -webkit-border-radius: 20px 20px 20px 20px;
+  -moz-border-radius: 20px 20px 20px 20px;
+  background: #60f579;
+  border: 3px solid #009734;
 }
 
 /* #submitButton{
-    border-radius: 200px 200px 200px 200px;
-    border-radius: 200px 200px 200px 200px;
-    -webkit-border-radius: 200px 200px 200px 200px;
-    -moz-border-radius: 200px 200px 200px 200px;
-    background: #78d1ca;
-    font-size: 20px;
-    border: 5px solid #152927;
-    height: 100px;
-    width: 100px;
+  border-radius: 200px 200px 200px 200px;
+  border-radius: 200px 200px 200px 200px;
+  -webkit-border-radius: 200px 200px 200px 200px;
+  -moz-border-radius: 200px 200px 200px 200px;
+  background: #78d1ca;
+  font-size: 20px;
+  border: 5px solid #152927;
+  height: 100px;
+  width: 100px;
 } */
 
 .pushable {
-    position: relative;
-    background: #78d1ca;
-    padding: 0;
-    cursor: pointer;
-    outline-offset: 4px;
-    transition: filter 250ms;
-  }
-  
-  .shadow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 200px 200px 200px 200px;
-    background: hsl(0deg 0% 0% / 0.25);
-    will-change: transform;
-    transform: translateY(2px);
-    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
-  }
-  
-  .edge {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* border-radius: 200px 200px 200px 200px; */
-    background: linear-gradient(
-      to left,
-      hsl(175.281deg 49% 16%) 0%,
-      hsl(175.281deg 49%, 32%) 8%,
-      hsl(175.281deg 49% 32%) 92%,
-      hsl(175.281deg 49% 16%) 100%,
-  
-    );
-  }
-  
-  .front {
-    display: block;
-    position: relative;
-    padding: 12px 42px;
-    border: 5px solid #152927;
-    border-radius: 200px 200px 200px 200px;
-    border-radius: 200px 200px 200px 200px;
-    -webkit-border-radius: 200px 200px 200px 200px;
-    -moz-border-radius: 200px 200px 200px 200px;
-    font-size: 1.25rem;
-    background: hsl(175.281deg, 49%, 65%);
-    will-change: transform;
-    transform: translateY(-4px);
-    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
-  }
-  
-  .pushable:hover {
-    filter: brightness(110%);
-  }
-  
-  .pushable:hover .front {
-    transform: translateY(-6px);
-    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
-  }
-  
-  .pushable:active .front {
-    transform: translateY(-2px);
-    transition: transform 34ms;
-  }
-  
-  .pushable:hover .shadow {
-    transform: translateY(4px);
-    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
-  }
-  
-  .pushable:active .shadow {
-    transform: translateY(1px);
-    transition: transform 34ms;
-  }
-  
-  .pushable:focus:not(:focus-visible) {
-    outline: none;
-  }
+  position: relative;
+  background: #78d1ca;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  border-radius: 30px;
+}
+
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 200px 200px 200px 200px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to left,
+    hsl(175.281deg 49% 16%) 0%,
+    hsl(175.281deg 49%, 32%) 8%,
+    hsl(175.281deg 49% 32%) 92%,
+    hsl(175.281deg 49% 16%) 100%,
+
+  );
+}
+
+.front {
+  display: block;
+  position: relative;
+  padding: 12px 42px;
+  border: 5px solid #152927;
+  border-radius: 200px 200px 200px 200px;
+  border-radius: 200px 200px 200px 200px;
+  -webkit-border-radius: 200px 200px 200px 200px;
+  -moz-border-radius: 200px 200px 200px 200px;
+  font-size: 1.25rem;
+  background: hsl(175.281deg, 49%, 65%);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.pushable:hover {
+  filter: brightness(110%);
+}
+
+.pushable:hover .front {
+  transform: translateY(-6px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.pushable:active .front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.pushable:hover .shadow {
+  transform: translateY(4px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.pushable:active .shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.pushable:focus:not(:focus-visible) {
+  outline: none;
+}
